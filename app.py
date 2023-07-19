@@ -81,5 +81,32 @@ def new_Book():
     book_list = db.select_all_book()
     return render_template('success_Book.html', book=book_list)
 
+
+
+#BOOKの削除
+@app.route('/kes_bo')
+def kes_bo():
+    return render_template('delete_Book.html')
+
+@app.route("/delete_book")
+def delete_book():
+    title = request.form.get("title")
+
+    db.dele_book(title)
+
+    return render_template("delete_ok.html")
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+    
+    
+#削除
+
+
+
+
+
+
+

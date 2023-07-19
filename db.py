@@ -94,3 +94,18 @@ def insert_book(title, author, pages):
     connetiion.commit()
     cursor.close()
     connetiion.close()
+    
+#BOOK削除
+def dele_book(title):
+    connection = get_connection()
+    cursor = connection.cursor()
+    sql = "delete from book_sample where title=%s"
+
+    cursor.execute(sql, (title))
+    connection.commit()
+
+    cursor.close()
+    connection.close()
+    
+    
+    
