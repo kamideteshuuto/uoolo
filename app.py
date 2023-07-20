@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import db
 
 app = Flask(__name__)
@@ -26,6 +26,13 @@ def login():
         # dictで返すことでフォームの入力量が増えても可読性が下がらない。
         input_data = {'user_name':user_name, 'password':password}
         return render_template('index.html', error=error, data=input_data)
+    
+#ログアウト    
+@app.route("/logout")
+def logout():
+    session.pop("user", None)  # session の破棄
+    return redirect(url_for("index"))
+
 
 @app.route('/mypage', methods=['GET'])
 def mypage():
@@ -65,7 +72,7 @@ def Boo_list():
 def home_back():
     return render_template('index.html')
 
-    #Book登録
+#Book登録
 @app.route('/regi_book')
 def register_book():
     return render_template('register_Book.html')
@@ -81,6 +88,12 @@ def new_Book():
     book_list = db.select_all_book()
     return render_template('success_Book.html', book=book_list)
 
+#戻る
+@app.route('/h1_back')
+def h1_back():
+    return render_template('mypage.html')
+
+
 
 
 #BOOKの削除
@@ -88,7 +101,7 @@ def new_Book():
 def kes_bo():
     return render_template('delete_Book.html')
 
-@app.route("/delete_book")
+@app.route("/delete_book", methods=["POST"])
 def delete_book():
     title = request.form.get("title")
 
@@ -96,6 +109,10 @@ def delete_book():
 
     return render_template("delete_ok.html")
 
+#戻る
+@app.route('/h2_back')
+def h2_back():
+    return render_template('mypage.html')
 
 
 if __name__ == '__main__':
