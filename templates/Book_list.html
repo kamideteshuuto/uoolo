@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book一覧</title>
-</head>
-<body>
-    <form>
-
-    </form>
-  <h3>マイページ</h3>
-  一覧表示
-  </a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>本一覧</title>
+    <style>
+      h1{
+      text-align: center;
+      }
+      .center{
+      text-align: center;
+      }
+      </style>
+  </head>
+  <body>
+    <h1>本の一覧</h1>
+    <table border>
+      <thead>
+        <tr>
+          <th>タイトル</th>
+          <th>著者</th>
+          <th>ページ数</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in books %}
+        <tr>
+          <td>{{ book[0] }}</td>
+          <td>{{ book[1] }}</td>
+          <td>{{ book[2] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{{url_for('mypage')}}">TOPへ</a>
+  </body>
 </html>

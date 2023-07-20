@@ -108,4 +108,20 @@ def dele_book(title):
     connection.close()
     
     
+def lis_boo():
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    sql = "SELECT title, author, pages FROM book_sample"
+
+    cursor.execute(sql)
+
+    rows = cursor.fetchall()
+
+    cursor.close()
+    connection.close()
+
+    return rows
+    
+    
     

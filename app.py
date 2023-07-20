@@ -30,8 +30,7 @@ def login():
 #ログアウト    
 @app.route("/logout")
 def logout():
-    session.pop("user", None)  # session の破棄
-    return redirect(url_for("index"))
+    return render_template('index')
 
 
 @app.route('/mypage', methods=['GET'])
@@ -63,10 +62,12 @@ def register_exe():
         error = '登録に失敗しました。'
         return render_template('register.html', error=error)
     
-    #一覧
-@app.route('/booklist')
+    #図書一覧
+@app.route('/Boo_list')
 def Boo_list():
-    return render_template('Book_list.html')
+    book_list = db.lis_boo()
+    return render_template('Book_list.html',books = book_list)
+
 
 @app.route('/hamed')
 def home_back():
