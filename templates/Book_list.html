@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>本一覧</title>
-    <style>
-      h1{
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>本一覧</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #bbbaba; /* 任意の背景色に変更 */
+    }
+    h1 {
       text-align: center;
-      }
-      .center{
+    }
+    .center {
       text-align: center;
-      }
-      </style>
-  </head>
-  <body>
-    <h1>本の一覧</h1>
-    <table border>
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">本の一覧</h1>
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th>タイトル</th>
@@ -33,6 +39,12 @@
         {% endfor %}
       </tbody>
     </table>
-    <a href="{{url_for('mypage')}}">TOPへ</a>
-  </body>
+  </div>
+  <a href="{{url_for('mypage')}}">TOPへ</a>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
