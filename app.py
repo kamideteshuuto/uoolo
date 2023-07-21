@@ -30,7 +30,7 @@ def login():
 #ログアウト    
 @app.route("/logout")
 def logout():
-    return render_template('index')
+    return render_template('index.html ')
 
 
 @app.route('/mypage', methods=['GET'])
@@ -86,8 +86,8 @@ def new_Book():
     
     db.insert_book(title, author, pages)
     
-    book_list = db.select_all_book()
-    return render_template('success_Book.html', book=book_list)
+    book_list = db.lis_boo()
+    return render_template('success_Book.html', books=book_list)
 
 #戻る
 @app.route('/h1_back')

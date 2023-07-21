@@ -101,7 +101,7 @@ def dele_book(title):
     cursor = connection.cursor()
     sql = "delete from book_sample where title=%s"
 
-    cursor.execute(sql, (title))
+    cursor.execute(sql, (title,))
     connection.commit()
 
     cursor.close()

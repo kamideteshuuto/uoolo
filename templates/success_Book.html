@@ -11,12 +11,38 @@
     .center{
     text-align: center;
     }
+    h3{
+    text-align: center;
+    }
+    .center{
+    text-align: center;
+    }
     </style>
 </head>
 <body>
   <form></form>
   <h1>図書登録</h1>
-  登録完了
+  <h3>登録完了<h3>
+  <h2>本の一覧</h2>
+    <table border>
+      <thead>
+        <tr>
+          <th>タイトル</th>
+          <th>著者</th>
+          <th>ページ数</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in books %}
+        <tr>
+          <td>{{ book[0] }}</td>
+          <td>{{ book[1] }}</td>
+          <td>{{ book[2] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  <a href="{{url_for('mypage')}}">TOPへ</a>
   <a href="{{url_for('Boo_list')}}">図書一覧</a>
   <a href="{{url_for('register_book')}}">図書登録</a>
 </body>
