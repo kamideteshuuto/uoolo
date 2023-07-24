@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>本の削除</title>
-    <style>
-      h1{
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>本の削除</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background: linear-gradient(to right, #bbbaba, #777676);
+    }
+    h1 {
       text-align: center;
-      }
-      .center{
+    }
+    .center {
       text-align: center;
-      }
-      </style>
-  </head>
-  <body>
-    <h1>本の削除画面</h1>
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">本の削除画面</h1>
     {% if error != null %}
     <p style="color: red">{{error}}</p>
     {% endif %}
     <form action="{{url_for('delete_book')}}" method="post">
-      図書名:<input type="text" name="title" value="{{title}}"><br />
-      <button type="submit">削除</button>
+      <div class="form-group">
+        <label for="title">図書名:</label>
+        <input type="text" class="form-control" name="title" value="{{title}}">
+      </div>
+      <button type="submit" class="btn btn-primary">削除</button>
     </form>
     <br>
-    <a href="{{url_for('h2_back')}}">戻る</a>
-    
-  </body>
+    <a href="{{url_for('h2_back')}}" class="btn btn-secondary">戻る</a>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

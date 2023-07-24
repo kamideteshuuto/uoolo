@@ -4,18 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>削除完了</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    h1{
-    text-align: center;
+    body {
+      background: linear-gradient(to right, #bbbaba, #777676);
     }
-    .center{
-    text-align: center;
+    h1 {
+      text-align: center;
     }
-    </style>
+    .center {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <h1>削除完了<h1>
-        <h3></h3>
-        <a href="{{url_for('h2_back')}}">戻る</a>
+  <div class="container mt-5">
+    <h1 class="mb-4">削除完了</h1>
+    <h3>{{message}}</h3>
+    <a href="{{url_for('h2_back')}}" class="btn btn-primary">戻る</a>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

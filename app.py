@@ -116,11 +116,10 @@ def h2_back():
     return render_template('mypage.html')
 
 
+
+
 if __name__ == '__main__':
     app.run(debug=True)
-    
-    
-#削除
 
 
 

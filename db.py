@@ -122,6 +122,4 @@ def lis_boo():
     connection.close()
 
     return rows
-    
-    
-    
+

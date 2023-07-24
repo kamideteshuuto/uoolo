@@ -3,26 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ユーザ登録画面</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    h1{
-    text-align: center;
+    body {
+      background: linear-gradient(to right, #bbbaba, #777676);
     }
-    .center{
-    text-align: center;
+    h1 {
+      text-align: center;
     }
-    </style>
+    .center {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <h1>ユーザ登録画面</h1>
-  {% if error != null %}
-    <p style="color:red">{{error}}</p>
-  {% endif %}
-  <form action="{{url_for('register_exe')}}" method="post">
-    ユーザ名:<input type="text" name="username" value="{{user_name}}"><br>
-    パスワード：<input type="password" name="password" value="{{password}}"><br>
-    <button type="submit">登録</button>
-  </form>
-<a href="{{url_for('home_back')}}">HOME</a>
+  <div class="container mt-5">
+    <h1>ユーザ登録画面</h1>
+    {% if error != null %}
+      <p style="color:red">{{error}}</p>
+    {% endif %}
+    <form action="{{url_for('register_exe')}}" method="post">
+      <div class="form-group">
+        <label for="username">ユーザ名:</label>
+        <input type="text" class="form-control" name="username" value="{{user_name}}">
+      </div>
+      <div class="form-group">
+        <label for="password">パスワード：</label>
+        <input type="password" class="form-control" name="password" value="{{password}}">
+      </div>
+      <button type="submit" class="btn btn-primary">登録</button>
+    </form>
+    <a href="{{url_for('home_back')}}" class="btn btn-secondary">HOME</a>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

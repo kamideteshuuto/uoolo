@@ -4,27 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    h1{
-    text-align: center;
+    body {
+      background: linear-gradient(to right, #bbbaba, #777676);
     }
-    .center{
-    text-align: center;
+    h1 {
+      text-align: center;
     }
-    h3{
-    text-align: center;
+    .center {
+      text-align: center;
     }
-    .center{
-    text-align: center;
+    h3 {
+      text-align: center;
     }
-    </style>
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
-  <form></form>
-  <h1>図書登録</h1>
-  <h3>登録完了<h3>
-  <h2>本の一覧</h2>
-    <table border>
+  <div class="container mt-5">
+    <form></form>
+    <h1 class="mb-4">図書登録</h1>
+    <h3>登録完了</h3>
+    <h2>本の一覧</h2>
+    <table class="table">
       <thead>
         <tr>
           <th>タイトル</th>
@@ -42,8 +52,12 @@
         {% endfor %}
       </tbody>
     </table>
-  <a href="{{url_for('mypage')}}">TOPへ</a>
-  <a href="{{url_for('Boo_list')}}">図書一覧</a>
-  <a href="{{url_for('register_book')}}">図書登録</a>
+    <a href="{{url_for('mypage')}}" class="btn btn-primary mr-2">TOPへ</a>
+    <a href="{{url_for('Boo_list')}}" class="btn btn-primary mr-2">図書一覧</a>
+    <a href="{{url_for('register_book')}}" class="btn btn-primary">図書登録</a>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
