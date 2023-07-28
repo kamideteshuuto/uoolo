@@ -115,6 +115,18 @@ def delete_book():
 def h2_back():
     return render_template('mypage.html')
 
+#検索
+@app.route('/serch')
+def serch():
+    return render_template('search_form.html')
+
+@app.route("/search_book", methods=["POST"])
+def search_book():
+    title = request.form.get("title")
+
+    book_list = db.book_search(title)
+
+    return render_template("search_books.html", books=book_list)
 
 
 

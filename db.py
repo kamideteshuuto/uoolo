@@ -123,3 +123,22 @@ def lis_boo():
 
     return rows
 
+def book_search(title):
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    sql = "SELECT * FROM book_sample WHERE title LIKE %s"
+
+    titles = "%" + title + "%"
+
+    cursor.execute(sql, (title,))
+
+    rows = cursor.fetchall()
+
+    cursor.close()
+    connection.close()
+
+    return rows
+    
+    
+    
